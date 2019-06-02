@@ -1,0 +1,12 @@
+/* css dans la page menu */
+.backMenu {
+    background: url(../img/PixelArt.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.piedMenu {
+    padding-top: 38%;
+}
+
+
+/* fin css menu */
