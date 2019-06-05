@@ -3,7 +3,7 @@ const game = {
 
     },
     dom: {
-
+        
     },
     methods: {
 
