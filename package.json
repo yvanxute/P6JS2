@@ -15,7 +15,6 @@
     "url": "https://github.com/yvanxute/P6JS2/issues"
   },
   "dependencies": {
-    "jquery": "*",
     "autoprefixer": "*",
     "grunt": "*"
   },
