@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "autoprefixer": "*",
-    "grunt": "*"
+    "gulp": "^4.0.2"
   },
   "homepage": "https://github.com/yvanxute/P6JS2#readme",
   "description": ""
