@@ -19,7 +19,7 @@ class GRID {
             for (let j = 0; j < this.colCount; j++){
                 const cellIx = i * this.colCount + j
                 const td = document.createElement('td')
-                $(td).addClass('cell cell-${cellIX}')
+                $(td).addClass('cell cell-${cellIx}')
                 tr.append(td)
             }
             grid.append(tr)
