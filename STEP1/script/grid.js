@@ -16,7 +16,7 @@ class GRID {
         const grid = $('#grid')
         for (let i = 0; i < this.rowCount; i++) {
             const tr = document.createElement('tr')
-            for (let j = 0; j < this.colCount; j++){
+            for (let j = 0; j < this.colCount; j++) {
                 const cellIx = i * this.colCount + j
                 const td = document.createElement('td')
                 $(td).addClass('cell cell-${cellIx}')
@@ -30,8 +30,8 @@ class GRID {
         const totalCells = this.rowcount * this.colCount
         const obstaclesCount = Math.trunc(totalCells * this.obstacles1)
 
-        for ( let i = 0; i < this.obstaclesCount; i++) {
-            
+        for (let i = 0; i < this.obstaclesCount; i++) {
+
             // position aleatoire de l'obstacles dans le grid          
             let obstacleIx
             do {
@@ -43,6 +43,7 @@ class GRID {
             this.obstacles.push(new obstacle(obstacleIx))
         }
     }
+    
 }
 
 
