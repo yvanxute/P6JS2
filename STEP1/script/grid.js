@@ -25,6 +25,22 @@ class GRID {
             grid.append(tr)
         }
     }
+
+    generatObstacles() {
+        const totalCells = this.rowcount * this.colCount
+        const obstaclesCount = Math.trunc(totalCells * this.obstacles1)
+
+        for ( let i = 0; i < this.obstaclesCount; i++) {
+            // position aleatoire de l'obstacles dans le grid
+            let obstacleIx
+            do {
+                obstacleIx = Math.round(Math.random() * (totalCells - 1))
+            } while (!this.isCellFree(obstacleIx))
+            //sauvegarde de la position de l'obstacle en l'ajoutant dans la grille (modification de la class)
+            $('#grid').find('.cell-${obstacleIx}').addClass('cell-obstacle')
+            this.obstacles.push(new obstacle(obstacleIx))
+        }
+    }
 }
 
 

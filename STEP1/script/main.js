@@ -2,7 +2,7 @@ const CONFIG = {
     GRID: {
         COLUMNS: 10,
         ROWS: 10,
-        OBSTACLES: 0
+        OBSTACLES: 0.1
      }
 }
 
