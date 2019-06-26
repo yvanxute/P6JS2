@@ -1,5 +1,7 @@
-class GRID {
+class Grid {
     obstacles1 = []
+
+    
     constructor(colCount, rowCount, obstacles1) {
         this.colCount = colCount
         this.rowCount = rowCount
@@ -43,7 +45,7 @@ class GRID {
             this.obstacles.push(new obstacle(obstacleIx))
         }
     }
-    
+
 }
 
 
