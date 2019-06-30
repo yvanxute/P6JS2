@@ -1,10 +1,10 @@
 class Grid {
-    obstacles1 = []
+    obstacles1 = [];
 
     
     constructor(colCount, rowCount, obstacles1) {
-        this.colCount = colCount
-        this.rowCount = rowCount
+        this.colCount = colCount,
+        this.rowCount = rowCount,
         this.obstacles1 = obstacles1
 
         // generations du tableau
