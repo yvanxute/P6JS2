@@ -1,17 +1,17 @@
 class Grid {
-    obstacles1 = [];
+   /*  obstacles1 = []; */
 
     
     constructor(colCount, rowCount, obstacles1) {
         this.colCount = colCount,
         this.rowCount = rowCount,
-        this.obstacles1 = obstacles1
+        /* this.obstacles1 = obstacles1 */
 
         // generations du tableau
         this.generatGrid()
 
         //generations d'un obstacle
-        this.generatObstacles()
+       /*  this.generatObstacles() */
 
     }
     generatGrid() {
@@ -28,7 +28,7 @@ class Grid {
         }
     }
 
-    generatObstacles() {
+/*     generatObstacles() {
         const totalCells = this.rowcount * this.colCount
         const obstaclesCount = Math.trunc(totalCells * this.obstacles1)
 
@@ -42,9 +42,9 @@ class Grid {
 
             //sauvegarde de la position de l'obstacle en l'ajoutant dans la grille (modification de la class)
             $('#grid').find('.cell-${obstacleIx}').addClass('cell-obstacle')
-            this.obstacles.push(new obstacle(obstacleIx))
+            this.obstacles1.push(new obstacle(obstacleIx))
         }
-    }
+    } */
 
 }
 
