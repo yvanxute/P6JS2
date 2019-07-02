@@ -2,7 +2,7 @@ class Grid {
    /*  obstacles1 = []; */
 
     
-    constructor(colCount, rowCount, obstacles1) {
+    constructor(colCount, rowCount) {
         this.colCount = colCount,
         this.rowCount = rowCount
         /* this.obstacles1 = obstacles1 */
@@ -21,7 +21,7 @@ class Grid {
             for (let j = 0; j < this.colCount; j++) {
                 const cellIx = i * this.colCount + j
                 const td = document.createElement('td')
-                $(td).addClass('cell cell- ${cellIx}')
+                $(td).addClass(`cell cell- ${cellIx}`)
                 tr.append(td)
             }
             grid.append(tr)
