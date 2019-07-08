@@ -2,10 +2,10 @@ class Grid {
     obstacles1 = [];
 
 
-    constructor(colCount, rowCount) {
+    constructor(colCount, rowCount, obstacle) {
         this.colCount = colCount,
-        this.rowCount = rowCount
-        this.obstacles1 = obstacles1
+            this.rowCount = rowCount,
+            this.obstacle = obstacle
 
         // generations du tableau
         this.generatGrid()
@@ -21,7 +21,7 @@ class Grid {
             for (let j = 0; j < this.colCount; j++) {
                 const cellIx = i * this.colCount + j
                 const td = document.createElement('td')
-                $(td).addClass(`cell cell- ${cellIx}`)
+                $(td).addClass(`cell cell-${cellIx}`)
                 tr.append(td)
             }
             grid.append(tr)
@@ -29,20 +29,23 @@ class Grid {
     }
 
     generatObstacles() {
-        const totalCells = this.rowcount * this.colCount
-        const obstaclesCount = Math.trunc(totalCells * this.obstacles1)
+        const totalCells = this.rowcount * this.colCount - 1
+        const obstacleCount = Math.trunc(totalCells * this.obstacle)
+        console.log('totalCells :', totalCells)
+        console.log('rowcount :', this.rowCount)
+        console.log('colcount :', this.colCount)
 
-        for (let i = 0; i < this.obstaclesCount; i++) {
+        // for (let i = 0; i < this.obstacleCount; i++) {
 
-            // position aleatoire de l'obstacles dans le grid          
-            let obstacleIx
-            do {
-                obstacleIx = Math.round(Math.random() * (totalCells - 1))
-            } while (!this.isCellFree(obstacleIx))
+        //     // position aleatoire de l'obstacles dans le grid          
+        //     let obstacleIx
+        //     do {
+        //         obstacleIx = Math.round(Math.random() * (totalCells - 1))
+        //     } while (!this.isCellFree(obstacleIx))
 
-            //sauvegarde de la position de l'obstacle en l'ajoutant dans la grille (modification de la class)
-            $('#grid').find(`.cell-${obstacleIx}`).addClass('cell-obstacle')
-            this.obstacles1.push(new obstacle(obstacleIx))
-        }
+        //     //sauvegarde de la position de l'obstacle en l'ajoutant dans la grille (modification de la class)
+        //     $('#grid').find(`.cell-${obstacleIx}`).addClass('cell-obstacle')
+        //     this.obstacle.push(new obstacle(obstacleIx))
+        // }
     }
 }

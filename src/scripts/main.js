@@ -1,15 +1,15 @@
 const CONFIG = {
     GRID: {
-        COLUMNS: 10,
+        COLUMNS: 15,
         ROWS: 10,
-        OBSTACLES: 0.1
-     }
+        OBSTACLE: 0.1
+    }
 }
 
 $(() => {
     const gridObj = new Grid(
         CONFIG.GRID.COLUMNS,
         CONFIG.GRID.ROWS,
-        CONFIG.GRID.OBSTACLES
+        CONFIG.GRID.OBSTACLE
     );
 })
