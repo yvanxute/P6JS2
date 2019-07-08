@@ -1,7 +1,8 @@
 {
-  "name": "npm-js2",
+  "name": "game",
   "version": "1.0.0",
-  "main": "main.js",
+  "description": "Projet test pour la demonstration d'un task runner",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,13 +12,14 @@
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yvanxute/P6JS2/issues"
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-connect": "^5.5.0",
+    "gulp-html": "^0.5.0",
+    "gulp-sass": "^4.0.1"
   },
   "dependencies": {
-    "autoprefixer": "*",
-    "gulp": "^4.0.2"
-  },
-  "homepage": "https://github.com/yvanxute/P6JS2#readme",
-  "description": ""
+    "gulp-open": "^3.0.1"
+  }
 }
