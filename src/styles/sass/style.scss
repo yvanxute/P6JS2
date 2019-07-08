@@ -1,9 +1,8 @@
-.game {
-    padding: 25%;
-    border: solid 2px black;
-};
-
-.grille {
-    border: solid 2px black;
-    padding: 25%;
-};
+.parent {
+    &-ctn {
+        width: 100%;
+        text-align: center;
+        color: $white;
+        text-align: center;
+    }
+}
