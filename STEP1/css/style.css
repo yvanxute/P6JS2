@@ -1,4 +1,5 @@
-.grid {
-    width: 100%;
-    color: black;
+.grille {
+    border: solid 2px black;
+    padding: 100px;
+
 }
