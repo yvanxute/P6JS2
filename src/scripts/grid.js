@@ -29,9 +29,9 @@ class Grid {
     }
 
     generatObstacles() {
-        const totalCells = this.rowcount * this.colCount - 1
-        const obstacleCount = Math.trunc(totalCells * this.obstacle)
-        console.log('totalCells :', totalCells)
+        const maxIx = this.rowCount * this.colCount - 1
+        const obstacleCount = Math.trunc(maxIx * this.obstacle)
+        console.log('maxIx :', maxIx)
         console.log('rowcount :', this.rowCount)
         console.log('colcount :', this.colCount)
 

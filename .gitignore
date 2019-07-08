@@ -1,3 +1,4 @@
 # fichier de node_nodule
 /node_modules
 /dist
+/.vscode
