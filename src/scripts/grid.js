@@ -1,11 +1,11 @@
 class Grid {
-    obstacle = [];
+    obstacleCount = [];
 
 
-    constructor(colCount, rowCount, obstacle) {
+    constructor(colCount, rowCount, obstacleCount) {
         this.colCount = colCount,
             this.rowCount = rowCount,
-            this.obstacle = obstacle
+            this.obstacleCount = obstacleCount
 
         // generations du tableau
         this.generatGrid()
@@ -30,23 +30,24 @@ class Grid {
 
     generatObstacle() {
         const maxIx = this.rowCount * this.colCount - 1
-        const obstacleCount = Math.trunc(maxIx * this.obstacle)
+        const obstacleCount = Math.trunc(maxIx * this.obstacleCount);
         console.log('maxIx :', maxIx)
         console.log('rowcount :', this.rowCount)
         console.log('colcount :', this.colCount)
-        console.log('obstacleIx :', this.obstacle)
+        console.log('obstaclecount :', this.obstacleCount)
 
         for (let i = 0; i < this.obstacleCount; i++) {
 
             // position aleatoire de l'obstacles dans le grid          
             let obstacleIx
             do {
-                obstacleIx = Math.round(Math.random() * (totalCells - 1))
+                obstacleIx = Math.round(Math.random() * (maxIx - 1))
 
             } while (!this.isCellFree(obstacleIx))
             //sauvegarde de la position de l'obstacle en l'ajoutant dans la grille (modification de la class)
             $('#grid').find(`.cell-${obstacleIx}`).addClass('cell-obstacle')
             this.obstacle.push(new obstacle(obstacleIx))
+
         }
     }
 }
