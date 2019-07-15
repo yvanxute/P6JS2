@@ -49,5 +49,8 @@ class Grid {
             this.obstacle.push(new obstacle(obstacleIx))
 
         }
+        .isCellFree() {
+
+        }
     }
 }
