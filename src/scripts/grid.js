@@ -48,12 +48,12 @@ class Grid {
             this.obstacles.push(new obstacle(obstacleIx))
 
         }
-        isCellFree(ix) {
-            let isFree = true;
-            isFree =
-                this.obstacles.filter(o => o.position === ix).length > 0 ? false : isFree;
-            console.log('obs :', isFree);
-            return isFree;
-        };
+
+    }
+    isCellFree(ix) {
+        let isFree = true;
+        isFree =
+            this.obstacles.filter(o => o.position === ix).length > 0 ? false : isFree;
+        return isFree;
     }
 }
