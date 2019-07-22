@@ -20,8 +20,10 @@ gulp.task('connect', function () {
 });
 
 gulp.task('open', function () {
-    gulp.src('.dist/' + CONSTANTS.INDEX_FILE)
-        .pipe(open({ uri: 'http://localhost:' + CONSTANTS.PORT_NUMBER + '/' + CONSTANTS.INDEX_FILE }))
+    gulp.src('./dist/' + CONSTANTS.INDEX_FILE)
+        .pipe(open({
+            uri: 'http://localhost:' + CONSTANTS.PORT_NUMBER + '/' + CONSTANTS.INDEX_FILE
+        }))
         .pipe(connect.reload());
 })
 

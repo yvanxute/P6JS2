@@ -30,7 +30,7 @@ class Grid {
 
     generatObstacle() {
         const maxIx = this.rowCount * this.colCount - 1
-        const obstacleCount = Math.trunc(maxIx * this.obstaclesPart);
+        const obstacleCount = Math.trunc(maxIx * this.obstaclePart);
         console.log('maxIx :', maxIx)
         console.log('rowcount :', this.rowCount)
         console.log('colcount :', this.colCount)
@@ -46,7 +46,7 @@ class Grid {
             //sauvegarde de la position de l'obstacle en l'ajoutant dans la grille (modification de la class)
             $('#grid').find(`.cell-${obstacleIx}`).addClass('cell-obstacle')
             this.obstacles.push(new obstacle(obstacleIx))
-            console.log('osb :', obstacles)
+            console.log('osb :', obstacleIx)
 
         }
     }
@@ -57,6 +57,5 @@ class Grid {
             this.obstacles.filter(o => o.position === ix).length > 0 ? false : isFree;
 
         return isFree;
-
     }
 }
