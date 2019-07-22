@@ -41,17 +41,18 @@ class Grid {
             let obstacleIx = -1
             do {
                 obstacleIx = Math.round(Math.random() * (maxIx))
-                console.log('obstacleIx :', obstacleIx)
+
             } while (!this.isCellFree(obstacleIx))
             //sauvegarde de la position de l'obstacle en l'ajoutant dans la grille (modification de la class)
             $('#grid').find(`.cell-${obstacleIx}`).addClass('cell-obstacle')
             this.obstacles.push(new obstacle(obstacleIx))
-            console.log('osb :', this.obstacles)
+            console.log('osb :', obstacles)
 
         }
     }
     isCellFree(ix) {
         let isFree = true;
+        // controle dans le tableau des obstacles que la position ix et libre 
         isFree =
             this.obstacles.filter(o => o.position === ix).length > 0 ? false : isFree;
 
