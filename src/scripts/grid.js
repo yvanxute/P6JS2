@@ -46,14 +46,16 @@ class Grid {
             //sauvegarde de la position de l'obstacle en l'ajoutant dans la grille (modification de la class)
             $('#grid').find(`.cell-${obstacleIx}`).addClass('cell-obstacle')
             this.obstacles.push(new obstacle(obstacleIx))
+            console.log('osb :', this.obstacles)
 
         }
-
     }
     isCellFree(ix) {
         let isFree = true;
         isFree =
             this.obstacles.filter(o => o.position === ix).length > 0 ? false : isFree;
+
         return isFree;
+
     }
 }
