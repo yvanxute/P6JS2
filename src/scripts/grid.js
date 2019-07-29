@@ -1,17 +1,21 @@
 class Grid {
     obstacles = [];
+    players = [];
 
-
-    constructor(colCount, rowCount, obstaclePart) {
+    constructor(colCount, rowCount, obstaclePart, players) {
         this.colCount = colCount,
             this.rowCount = rowCount,
-            this.obstaclePart = obstaclePart
+            this.obstaclePart = obstaclePart,
+            this.players = players
 
         // generations du tableau
         this.generatGrid()
 
         //generations d'un obstacle
         this.generatObstacle()
+
+        //generations des joueurs
+        this.generatPlayer()
 
     }
     generatGrid() {
@@ -31,9 +35,6 @@ class Grid {
     generatObstacle() {
         const maxIx = this.rowCount * this.colCount - 1
         const obstacleCount = Math.trunc(maxIx * this.obstaclePart);
-        console.log('maxIx :', maxIx)
-        console.log('rowcount :', this.rowCount)
-        console.log('colcount :', this.colCount)
 
         for (let i = 0; i < obstacleCount; i++) {
 
@@ -44,10 +45,9 @@ class Grid {
 
             } while (!this.isCellFree(obstacleIx))
             //sauvegarde de la position de l'obstacle en l'ajoutant dans la grille (modification de la class)
-            $('#grid').find(`.cell-${obstacleIx}`).addClass('cell-obstacle')
+            $('#grid').find(`.cell-${obstacleIx}`)
+                .addClass('cell-obstacle')
             this.obstacles.push(new obstacle(obstacleIx))
-            console.log('osb :', obstacleIx)
-
         }
     }
     isCellFree(ix) {
@@ -57,5 +57,8 @@ class Grid {
             this.obstacles.filter(o => o.position === ix).length > 0 ? false : isFree;
 
         return isFree;
+    }
+    generatPlayer() {
+
     }
 }
