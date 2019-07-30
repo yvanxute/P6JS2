@@ -18,6 +18,7 @@ class Grid {
         this.generatPlayer()
 
     }
+    // création de ma grille
     generatGrid() {
         const grid = $('#grid')
         for (let i = 0; i < this.rowCount; i++) {
@@ -31,7 +32,7 @@ class Grid {
             grid.append(tr)
         }
     }
-
+    // création des obstacles 
     generatObstacle() {
         const maxIx = this.rowCount * this.colCount - 1
         const obstacleCount = Math.trunc(maxIx * this.obstaclePart);
@@ -58,7 +59,11 @@ class Grid {
 
         return isFree;
     }
+    //création de mes joueur 
     generatPlayer() {
-
+        //je dois crée une fonction qui ressemble au generateur d'obsctacle pour générer mes player au nombre de 2
+    }
+    movePlayer() {
+        // je dois crée une fonction pour le deplacement des mes joueur 
     }
 }

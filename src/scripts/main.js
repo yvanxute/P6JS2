@@ -10,6 +10,7 @@ $(() => {
     const gridObj = new Grid(
         CONFIG.GRID.COLUMNS,
         CONFIG.GRID.ROWS,
-        CONFIG.GRID.OBSTACLES
+        CONFIG.GRID.OBSTACLES,
+        CONFIG.GRID.PLAYERS
     );
 })
