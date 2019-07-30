@@ -1,18 +1,22 @@
 class Grid {
-    obstacles = [];
-    players = [];
+    obstacles = []
+    players = []
+    weapons = []
 
-    constructor(colCount, rowCount, obstaclePart, players) {
-        this.colCount = colCount,
-            this.rowCount = rowCount,
-            this.obstaclePart = obstaclePart,
-            this.players = players
+    constructor(colCount, rowCount, obstaclePart, playersCount) {
+        this.colCount = colCount
+        this.rowCount = rowCount
+        this.obstaclePart = obstaclePart
+        this.playersCount = playersCount
 
         // generations du tableau
         this.generatGrid()
 
         //generations d'un obstacle
         this.generatObstacle()
+
+        // Génération des armes
+        this.generateWeapons()
 
         //generations des joueurs
         this.generatPlayer()
@@ -53,17 +57,55 @@ class Grid {
     }
     isCellFree(ix) {
         let isFree = true;
+
         // controle dans le tableau des obstacles que la position ix et libre 
-        isFree =
-            this.obstacles.filter(o => o.position === ix).length > 0 ? false : isFree;
+        isFree = this.obstacles.filter(o => o.position === ix).length > 0 ? false : isFree
+
+        // Vérifier la présence d'arme
+        isFree = this.weapons.filter(o => o.position === ix).length > 0 ? false : isFree
+
+        // Vérifier la présence de joueur
+        isFree = this.players.filter(o => o.position === ix).length > 0 ? false : isFree
 
         return isFree;
     }
     //création de mes joueur 
     generatPlayer() {
         //je dois crée une fonction qui ressemble au generateur d'obsctacle pour générer mes player au nombre de 2
+
+        // Recuperer le nb de joueurs à générer
+
+        // Pour chaque joueur, trouver une case libre et le placer dessus
     }
-    movePlayer() {
-        // je dois crée une fonction pour le deplacement des mes joueur 
+
+    generateWeapons() {
+        // Récupérer le nb d'armes à générer
+
+        // Pour chaque arme, trouver une case libre et la placer dessus
+    }
+
+    setPlayerNewPosition(oldPosition, newPosition) {
+        // Supprimer la classe player à la position oldPosition
+
+
+        // Ajouter la classe player à la position newPosition
+    }
+
+    getNextFreeCells(position) {
+        let availableIx = []
+        for (var i = 0; i < 4; i++) {
+            const currentOffset =
+                // i est pair
+                ((i + 1) % 2) * Math.pow(-1, (i + 1) % 3)
+                +
+                // i est impair
+                (i % 2) * Math.pow(-1, i % 3) * this.colCount
+
+            availableIx.push(position + currentOffset)
+            availableIx.push(position + currentOffset * 2)
+            availableIx.push(position + currentOffset * 3)
+        }
+
+        return availableIx
     }
 }
