@@ -3,11 +3,12 @@ class Grid {
     players = []
     weapons = []
 
-    constructor(colCount, rowCount, obstaclePart, playersCount) {
+    constructor(colCount, rowCount, obstaclePart, playersCount, weaponsCount) {
         this.colCount = colCount
         this.rowCount = rowCount
         this.obstaclePart = obstaclePart
         this.playersCount = playersCount
+        this.weaponsCount = weaponsCount
 
         // generations du tableau
         this.generatGrid()
@@ -80,8 +81,23 @@ class Grid {
 
     generateWeapons() {
         // Récupérer le nb d'armes à générer
+        const maxIx = this.rowCount * this.colCount - 1
+        const weaponsCount = Math.trunc(maxIx * this.weaponsCount);
 
-        // Pour chaque arme, trouver une case libre et la placer dessus
+        for (let i = 0; i < weaponsCount; i++) {
+
+            // position aleatoire de weapon dans le grid          
+            let weaponIx = -1
+            do {
+                weaponIx = Math.round(Math.random() * (maxIx))
+
+            } while (!this.isCellFree(weaponIx))
+             // Pour chaque arme, trouver une case libre et la placer dessus
+            $('#grid').find(`.cell-${weaponIx}`)
+                .addClass('cell-weapon')
+            this.weapons.push(new weapon(weaponIx))
+        }
+       
     }
 
     setPlayerNewPosition(oldPosition, newPosition) {

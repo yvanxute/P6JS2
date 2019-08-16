@@ -3,7 +3,8 @@ const CONFIG = {
         COLUMNS: 15,
         ROWS: 10,
         OBSTACLES: 0.1,
-        PLAYERS_COUNT: 2
+        PLAYERS_COUNT: 2,
+        WEAPON_COUNT: 0.2
     }
 }
 
@@ -12,7 +13,8 @@ $(() => {
         CONFIG.GRID.COLUMNS,
         CONFIG.GRID.ROWS,
         CONFIG.GRID.OBSTACLES,
-        CONFIG.GRID.PLAYERS_COUNT
+        CONFIG.GRID.PLAYERS_COUNT,
+        CONFIG.GRID.WEAPON_COUNT
     )
 
     let availableIx = gridObj.getNextFreeCells(25)
