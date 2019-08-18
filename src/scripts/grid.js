@@ -77,6 +77,22 @@ class Grid {
         // Recuperer le nb de joueurs à générer
 
         // Pour chaque joueur, trouver une case libre et le placer dessus
+        const maxIx = this.rowCount * this.colCount - 1
+        // const playersCount = Math.trunc(maxIx * this.playersCount);
+
+        for (let i = 0; i < this.playersCount; i++) {
+
+            // position aleatoire de player dans le grid          
+            let playerIx = -1
+            do {
+                playerIx = Math.round(Math.random() * (maxIx))
+
+            } while (!this.isCellFree(playerIx))
+            // Pour chaque player, trouver une case libre et la placer dessus
+            $('#grid').find(`.cell-${playerIx}`)
+                .addClass('cell-player')
+            this.players.push(new player(playerIx))
+        }
     }
 
     generateWeapons() {
@@ -92,12 +108,12 @@ class Grid {
                 weaponIx = Math.round(Math.random() * (maxIx))
 
             } while (!this.isCellFree(weaponIx))
-             // Pour chaque arme, trouver une case libre et la placer dessus
+            // Pour chaque arme, trouver une case libre et la placer dessus
             $('#grid').find(`.cell-${weaponIx}`)
                 .addClass('cell-weapon')
             this.weapons.push(new weapon(weaponIx))
         }
-       
+
     }
 
     setPlayerNewPosition(oldPosition, newPosition) {
@@ -112,8 +128,7 @@ class Grid {
         for (var i = 0; i < 4; i++) {
             const currentOffset =
                 // i est pair
-                ((i + 1) % 2) * Math.pow(-1, (i + 1) % 3)
-                +
+                ((i + 1) % 2) * Math.pow(-1, (i + 1) % 3) +
                 // i est impair
                 (i % 2) * Math.pow(-1, i % 3) * this.colCount
 
