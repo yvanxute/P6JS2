@@ -78,7 +78,6 @@ class Grid {
 
         // Pour chaque joueur, trouver une case libre et le placer dessus
         const maxIx = this.rowCount * this.colCount - 1
-        // const playersCount = Math.trunc(maxIx * this.playersCount);
 
         for (let i = 0; i < this.playersCount; i++) {
 
