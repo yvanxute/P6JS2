@@ -4,7 +4,7 @@ const CONFIG = {
         ROWS: 10,
         OBSTACLES: 0.1,
         PLAYERS_COUNT: 2,
-        WEAPON_COUNT: 0.08
+        WEAPON_COUNT: 0.03
     }
 }
 
