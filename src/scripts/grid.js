@@ -110,7 +110,7 @@ class Grid {
             } while (!this.isCellFree(weaponIx))
             // Pour chaque arme, trouver une case libre et la placer dessus
             $('#grid').find(`.cell-${weaponIx}`)
-                .addClass('cell-weapon'(weaponLv[~~(Math.random() * weaponLv.length)]))
+                .addClass(`.cell-weapon${ weaponLv[~~(Math.random() * weaponLv.length)]}`)
             this.weapons.push(new weapon(weaponIx))
         }
 

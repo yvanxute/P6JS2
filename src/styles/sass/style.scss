@@ -20,24 +20,28 @@
     background-color: grey;
 }
 
-.cell-weapon {
-    background-color: red;
+// .cell-weapon {
+//     background-color: red;
+// }
+
+.cell-weaponlv1 {
+    //background-image: url(../../data/img/lv1.png);
+    background-color: black;
 }
 
-.lv1 {
-    background-image: url(../../data/img/lv1.png);
+.cell-weaponlv2 {
+    //background-image: url(../../data/img/lv2.png);
+    background-color: maroon;
 }
 
-.lv2 {
-    background-image: url(../../data/img/lv2.png);
+.cell-weaponlv3 {
+    // background-image: url(../../data/img/lv3.png);
+    background-color: yellow;
 }
 
-.lv3 {
-    background-image: url(../../data/img/lv3.png);
-}
-
-.lv4 {
-    background-image: url(../../data/img/lv4.png);
+.cell-weaponlv4 {
+    //background-image: url(../../data/img/lv4.png);
+    background-color: green;
 
 }
 
@@ -46,17 +50,17 @@
 }
 
 .perso1 {
-    background-image: url(../../data/img/perso1.jpg);
+    // background-image: url(../../data/img/perso1.jpg);
 }
 
 .perso2 {
-    background-image: url(../../data/img/perso2.jpg);
+    //background-image: url(../../data/img/perso2.jpg);
 }
 
 .perso3 {
-    background-image: url(../../data/img/perso3.jpg);
+    // background-image: url(../../data/img/perso3.jpg);
 }
 
 .perso4 {
-    background-image: url(../../data/img/perso4.png);
+    // background-image: url(../../data/img/perso4.png);
 }
