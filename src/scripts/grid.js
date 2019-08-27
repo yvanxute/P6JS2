@@ -1,7 +1,7 @@
 class Grid {
     obstacles = []
     players = []
-    weapons = []
+    weapons = ['lv1', 'lv2', 'lv3', 'lv4']
 
     constructor(colCount, rowCount, obstaclePart, playersCount, weaponsCount) {
         this.colCount = colCount
@@ -111,6 +111,8 @@ class Grid {
             $('#grid').find(`.cell-${weaponIx}`)
                 .addClass('cell-weapon')
             this.weapons.push(new weapon(weaponIx))
+            // var weaponlv = ['lv1', 'lv2', 'lv3', 'lv4']
+            // console.log(weaponlv.length);
         }
 
     }
