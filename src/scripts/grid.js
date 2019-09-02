@@ -135,6 +135,7 @@ class Grid {
             lv2: '30',
             lv3: '40',
             lv4: '45',
+            default: '10'
         };
         for (let i = 0; i < weaponsCount; i += 4) {
 
