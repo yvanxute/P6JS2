@@ -1,8 +1,8 @@
 class player {
-    constructor(position, weapon, health = 100) {
+    constructor(position, weaponDefault = 10, health = 100) {
         this.position = position;
         this.health = health
-        this.weapon = weapon
+        this.weapon = weaponDefault
     }
 
     move(position) {

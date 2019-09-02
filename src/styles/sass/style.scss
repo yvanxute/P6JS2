@@ -25,23 +25,23 @@
 // }
 
 .cell-weaponlv1 {
-    //background-image: url(../../data/img/lv1.png);
-    background-color: black;
+    background: no-repeat center/80% url('../assets/lv1.png');
+    // background-color: black;
 }
 
 .cell-weaponlv2 {
-    //background-image: url(../../data/img/lv2.png);
-    background-color: maroon;
+    background: no-repeat center/80% url('../assets/lv2.png');
+    // background-color: maroon;
 }
 
 .cell-weaponlv3 {
-    // background-image: url(../../data/img/lv3.png);
-    background-color: yellow;
+    background: no-repeat center/80% url('../assets/lv3.png');
+    //background-color: yellow;
 }
 
 .cell-weaponlv4 {
-    //background-image: url(../../data/img/lv4.png);
-    background-color: green;
+    background: no-repeat center/80% url('../assets/lv4.png');
+    // background-color: green;
 
 }
 
@@ -49,18 +49,25 @@
     background-color: blue;
 }
 
-.perso1 {
-    // background-image: url(../../data/img/perso1.jpg);
+.cell-playeurperso1 {
+    background: no-repeat center/80% url('../assets/perso1.jpg');
 }
 
-.perso2 {
-    //background-image: url(../../data/img/perso2.jpg);
+.cell-playeurperso2 {
+    background: no-repeat center/80% url('../assets/perso2.jpg');
 }
 
-.perso3 {
-    // background-image: url(../../data/img/perso3.jpg);
-}
+// .cell-playeurperso3 {
+//     background: no-repeat center/80% url('../assets/perso3.jpg');
+// }
 
-.perso4 {
-    // background-image: url(../../data/img/perso4.png);
+// .cell-playeurperso4 {
+//     background: no-repeat center/80% url('../assets/perso4.png');
+// }
+
+div#target {
+    position: relative;
+    float: right;
+    top: -520px;
+    margin-right: 50px;
 }

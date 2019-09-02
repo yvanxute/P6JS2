@@ -78,6 +78,8 @@ class Grid {
 
         // Pour chaque joueur, trouver une case libre et le placer dessus
         const maxIx = this.rowCount * this.colCount - 1
+        // playeurSt = select player
+        const playerSt = ['perso1', 'perso2']
 
         for (let i = 0; i < this.playersCount; i++) {
 
@@ -89,8 +91,35 @@ class Grid {
             } while (!this.isCellFree(playerIx))
             // Pour chaque player, trouver une case libre et la placer dessus
             $('#grid').find(`.cell-${playerIx}`)
-                .addClass('cell-player')
+                .addClass(`cell-playeur${ playerSt[~~(Math.random() * playerSt.length)]}`)
             this.players.push(new player(playerIx))
+            $('#target').html(playerSt)
+            console.log('player', playerSt)
+        }
+        switch (playerSt) {
+            case perso1:
+                // instructions exécutées lorsque le 
+                // résultat de l'expression correspond à valeur1 
+                console.log('perso1')
+                break;
+
+            case perso2:
+                // instructions exécutées lorsque le 
+                // résultat de l'expression correspond à valeur2 
+                console.log('perso2')
+                break;
+
+            case playeurperso3:
+                // instructions exécutées lorsque le 
+                // résultat de l'expression correspond à valeurN 
+                console.log('perso3')
+                break;
+
+            default:
+                // instructions exécutées quand aucun des
+                // les valeurs correspondent à la valeur de l'expression 
+                console.log('default')
+                break;
         }
     }
 
@@ -110,7 +139,7 @@ class Grid {
             } while (!this.isCellFree(weaponIx))
             // Pour chaque arme, trouver une case libre et la placer dessus
             $('#grid').find(`.cell-${weaponIx}`)
-                .addClass(`.cell-weapon${ weaponLv[~~(Math.random() * weaponLv.length)]}`)
+                .addClass(`cell-weapon${ weaponLv[~~(Math.random() * weaponLv.length)]}`)
             this.weapons.push(new weapon(weaponIx))
         }
 
