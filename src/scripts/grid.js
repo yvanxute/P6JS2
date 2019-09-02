@@ -78,9 +78,14 @@ class Grid {
 
         // Pour chaque joueur, trouver une case libre et le placer dessus
         const maxIx = this.rowCount * this.colCount - 1
+        const playerSt = ['perso1 ', 'perso2 ']
         // const playerSt = {
-        //     perso1 = 'nom1',
-        //     perso2 = 'nom2'
+        //     length = 0,
+        //     playerSt: function ajoutPerso(perso) {
+        //         // obj.length est automatiquement incrémenté
+        //         // quand on ajoute un élément
+        //         [playerSt].push.call(this, perso);
+        //     }
         // }
 
         for (let i = 0; i < this.playersCount; i++) {
@@ -93,36 +98,43 @@ class Grid {
             } while (!this.isCellFree(playerIx))
             // Pour chaque player, trouver une case libre et la placer dessus
             $('#grid').find(`.cell-${playerIx}`)
-                .addClass(`cell-playeur${ playerSt[~~(Math.random() * playerSt.length)]}`)
+                .addClass(`cell-player${ playerSt[~~(Math.random() * playerSt.length)]}`)
             this.players.push(new player(playerIx))
             $('#target').html(playerSt)
             console.log('player', playerSt)
 
-            switch (playerSt) {
-                case perso1:
-                    // instructions exécutées lorsque le 
-                    // résultat de l'expression correspond à valeur1 
-                    console.log('perso1')
-                    break;
+            // switch (playerSt) {
+            //     case perso1:
+            //         // instructions exécutées lorsque le 
+            //         // résultat de l'expression correspond à valeur1 
+            //         playerSt.ajoutPerso({
+            //             perso1
+            //         });
+            //         console.log('perso1')
+            //         break;
 
-                case perso2:
-                    // instructions exécutées lorsque le 
-                    // résultat de l'expression correspond à valeur2 
-                    console.log('perso2')
-                    break;
+            //     case perso2:
+            //         // instructions exécutées lorsque le 
+            //         // résultat de l'expression correspond à valeur2 
+            //         playerSt.ajoutPerso({
+            //             perso2
+            //         });
+            //         console.log('perso2')
+            //         break;
 
-                case playeurperso3:
-                    // instructions exécutées lorsque le 
-                    // résultat de l'expression correspond à valeurN 
-                    console.log('perso3')
-                    break;
+            //     case perso3:
+            //         // instructions exécutées lorsque le 
+            //         // résultat de l'expression correspond à valeurN 
+            //         console.log('perso3')
+            //         break;
 
-                default:
-                    // instructions exécutées quand aucun des
-                    // les valeurs correspondent à la valeur de l'expression 
-                    console.log('default')
-                    break;
-            }
+            //     default:
+            //         // instructions exécutées quand aucun des
+            //         // les valeurs correspondent à la valeur de l'expression 
+            //         console.log('default')
+            //         break;
+            // }
+
         }
     }
 
@@ -130,13 +142,14 @@ class Grid {
         // Récupérer le nb d'armes à générer
         const maxIx = this.rowCount * this.colCount - 1
         const weaponsCount = Math.trunc(maxIx * this.weaponsCount);
-        const weaponLv = {
-            lv1: '20',
-            lv2: '30',
-            lv3: '40',
-            lv4: '45',
-            default: '10'
-        };
+        const weaponLv = ['lv1 ', 'lv2 ', 'lv3 ', 'lv4 ']
+        // const weaponLv = {
+        //     lv1: '20',
+        //     lv2: '30',
+        //     lv3: '40',
+        //     lv4: '45',
+        //     default: '10'
+        // };
         for (let i = 0; i < weaponsCount; i += 4) {
 
             // position aleatoire de weapon dans le grid          
@@ -149,40 +162,40 @@ class Grid {
             $('#grid').find(`.cell-${weaponIx}`)
                 .addClass(`cell-weapon${ weaponLv[~~(Math.random() * weaponLv.length)]}`)
             this.weapons.push(new weapon(weaponIx))
-            switch (weaponLv) {
-                case lv1:
-                    // instructions exécutées lorsque le 
-                    // résultat de l'expression correspond à valeur1 
-                    $('#grid').find(`.cell-${weaponIx}`)
-                        .addClass(`cell-weapon${cell-weaponlv1}`)
-                    this.weapons.push(new weapon(weaponIx))
-                    console.log('lv1', lv1)
-                    break;
+            // switch (weaponLv) {
+            //     case lv1:
+            //         // instructions exécutées lorsque le 
+            //         // résultat de l'expression correspond à valeur1 
+            //         $('#grid').find(`.cell-${weaponIx}`)
+            //             .addClass(`cell-weapon${cell-weaponlv1}`)
+            //         this.weapons.push(new weapon(weaponIx))
+            //         console.log('lv1', lv1)
+            //         break;
 
-                case lv2:
-                    // instructions exécutées lorsque le 
-                    // résultat de l'expression correspond à valeur2 
-                    console.log('lv2')
-                    break;
+            //     case lv2:
+            //         // instructions exécutées lorsque le 
+            //         // résultat de l'expression correspond à valeur2 
+            //         console.log('lv2')
+            //         break;
 
-                case lv3:
-                    // instructions exécutées lorsque le 
-                    // résultat de l'expression correspond à valeurN 
-                    console.log('lv3')
-                    break;
+            //     case lv3:
+            //         // instructions exécutées lorsque le 
+            //         // résultat de l'expression correspond à valeurN 
+            //         console.log('lv3')
+            //         break;
 
-                case lv4:
-                    // instructions exécutées lorsque le 
-                    // résultat de l'expression correspond à valeurN 
-                    console.log('lv4')
-                    break;
+            //     case lv4:
+            //         // instructions exécutées lorsque le 
+            //         // résultat de l'expression correspond à valeurN 
+            //         console.log('lv4')
+            //         break;
 
-                default:
-                    // instructions exécutées quand aucun des
-                    // les valeurs correspondent à la valeur de l'expression 
-                    console.log('default')
-                    break;
-            }
+            //     default:
+            //         // instructions exécutées quand aucun des
+            //         // les valeurs correspondent à la valeur de l'expression 
+            //         console.log('default')
+            //         break;
+            // }
         }
 
     }
