@@ -62,9 +62,16 @@
 //     background: no-repeat center/80% url('../assets/perso4.png');
 // }
 
-div#target {
+div#targetPl {
     position: relative;
     float: right;
     top: -520px;
     margin-right: 50px;
+}
+
+div#targetWp {
+    position: relative;
+    float: right;
+    top: -520px;
+    margin-right: 20px;
 }

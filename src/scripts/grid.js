@@ -100,7 +100,7 @@ class Grid {
             $('#grid').find(`.cell-${playerIx}`)
                 .addClass(`cell-player${ playerSt[~~(Math.random() * playerSt.length)]}`)
             this.players.push(new player(playerIx))
-            $('#target').html(playerSt)
+            $('#targetPl').html(playerSt)
             console.log('player', playerSt)
 
             // switch (playerSt) {
@@ -162,6 +162,7 @@ class Grid {
             $('#grid').find(`.cell-${weaponIx}`)
                 .addClass(`cell-weapon${ weaponLv[~~(Math.random() * weaponLv.length)]}`)
             this.weapons.push(new weapon(weaponIx))
+            $('#targetWp').html(weaponLv)
             // switch (weaponLv) {
             //     case lv1:
             //         // instructions exécutées lorsque le 
