@@ -78,17 +78,11 @@ class Grid {
 
         // Pour chaque joueur, trouver une case libre et le placer dessus
         const maxIx = this.rowCount * this.colCount - 1
-        const playerSt = ['perso1 ', 'perso2 ']
-        // const playerSt = {
-        //     length = 0,
-        //     playerSt: function ajoutPerso(perso) {
-        //         // obj.length est automatiquement incrémenté
-        //         // quand on ajoute un élément
-        //         [playerSt].push.call(this, perso);
-        //     }
-        // }
+        const playerName = 'joueur' // modif
+
 
         for (let i = 0; i < this.playersCount; i++) {
+            console.log('i', i) // to do ajouter un id unique a chaque joueur dans le tableau des joueurs pour le retrouver 
 
             // position aleatoire de player dans le grid          
             let playerIx = -1
@@ -96,46 +90,20 @@ class Grid {
                 playerIx = Math.round(Math.random() * (maxIx))
 
             } while (!this.isCellFree(playerIx))
+            let ixHtml = i + 1,
+                curentNameHtml = playerName + ixHtml
             // Pour chaque player, trouver une case libre et la placer dessus
-            $('#grid').find(`.cell-${playerIx}`)
-                .addClass(`cell-player${ playerSt[~~(Math.random() * playerSt.length)]}`)
-            this.players.push(new player(playerIx))
-            $('#targetPl').html(playerSt)
-            console.log('player', playerSt)
+            $('#grid').find(`.cell-${playerIx}`) // modif 
+                .addClass(`cell-player${ixHtml}`)
+            console.log('playerName', curentNameHtml)
+            this.players.push(new player(playerIx, curentNameHtml))
+            // $('#targetPl').html(playerSt)
+            // console.log('player', playerSt)
 
-            // switch (playerSt) {
-            //     case perso1:
-            //         // instructions exécutées lorsque le 
-            //         // résultat de l'expression correspond à valeur1 
-            //         playerSt.ajoutPerso({
-            //             perso1
-            //         });
-            //         console.log('perso1')
-            //         break;
-
-            //     case perso2:
-            //         // instructions exécutées lorsque le 
-            //         // résultat de l'expression correspond à valeur2 
-            //         playerSt.ajoutPerso({
-            //             perso2
-            //         });
-            //         console.log('perso2')
-            //         break;
-
-            //     case perso3:
-            //         // instructions exécutées lorsque le 
-            //         // résultat de l'expression correspond à valeurN 
-            //         console.log('perso3')
-            //         break;
-
-            //     default:
-            //         // instructions exécutées quand aucun des
-            //         // les valeurs correspondent à la valeur de l'expression 
-            //         console.log('default')
-            //         break;
-            // }
 
         }
+        console.log('tableau des joueurs: ', this.players)
+        // exo = prevoir un 4 joueurs et faire un console.log du joueur ayant l'id 3 .find() soit .filter()
     }
 
     generateWeapons() {
