@@ -112,16 +112,12 @@ class Grid {
     generateWeapons() {
         // Récupérer le nb d'armes à générer
         const maxIx = this.rowCount * this.colCount - 1
-        const weaponsCount = Math.trunc(maxIx * this.weaponsCount);
-        const weaponLv = ['lv1 ', 'lv2 ', 'lv3 ', 'lv4 ']
-        // const weaponLv = {
-        //     lv1: '20',
-        //     lv2: '30',
-        //     lv3: '40',
-        //     lv4: '45',
-        //     default: '10'
-        // };
-        for (let i = 0; i < weaponsCount; i += 4) {
+
+        let weaponLv = [
+            "lv",
+        ];
+
+        for (let i = 0; i < this.weaponsCount; i++) {
 
             // position aleatoire de weapon dans le grid          
             let weaponIx = -1
@@ -129,12 +125,15 @@ class Grid {
                 weaponIx = Math.round(Math.random() * (maxIx))
 
             } while (!this.isCellFree(weaponIx))
+            let wpHtml = i + 1,
+                wpCurentNameHtml = weaponLv + wpHtml
             // Pour chaque arme, trouver une case libre et la placer dessus
             $('#grid').find(`.cell-${weaponIx}`)
-                .addClass(`cell-weapon${ weaponLv[~~(Math.random() * weaponLv.length)]}`)
-            this.weapons.push(new weapon(weaponIx))
-            $('#targetWp').html(weaponLv)
+                .addClass(`cell-weapon${wpHtml}`)
+            this.weapons.push(new weapon(weaponIx, wpCurentNameHtml, i))
+
         }
+        console.log('tableau des armes: ', this.weapons)
 
     }
 
