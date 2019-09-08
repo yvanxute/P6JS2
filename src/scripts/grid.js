@@ -71,14 +71,17 @@ class Grid {
         return isFree;
     }
     //création de mes joueur 
-    generatPlayer() {
+    generatPlayer = () => {
         //je dois crée une fonction qui ressemble au generateur d'obsctacle pour générer mes player au nombre de 2
 
         // Recuperer le nb de joueurs à générer
 
         // Pour chaque joueur, trouver une case libre et le placer dessus
         const maxIx = this.rowCount * this.colCount - 1
-        const playerName = 'joueur' // modif
+
+        let playerName = [
+            "joueur",
+        ];
 
 
         for (let i = 0; i < this.playersCount; i++) {
@@ -96,14 +99,14 @@ class Grid {
             $('#grid').find(`.cell-${playerIx}`) // modif 
                 .addClass(`cell-player${ixHtml}`)
             console.log('playerName', curentNameHtml)
-            this.players.push(new player(playerIx, curentNameHtml))
-            // $('#targetPl').html(playerSt)
-            // console.log('player', playerSt)
-
-
+            this.players.push(new player(playerIx, curentNameHtml, i))
         }
         console.log('tableau des joueurs: ', this.players)
         // exo = prevoir un 4 joueurs et faire un console.log du joueur ayant l'id 3 .find() soit .filter()
+        console.log('joueur:', this.players.find((n) => {
+            return n.id === 3;
+        }));
+
     }
 
     generateWeapons() {
@@ -131,40 +134,6 @@ class Grid {
                 .addClass(`cell-weapon${ weaponLv[~~(Math.random() * weaponLv.length)]}`)
             this.weapons.push(new weapon(weaponIx))
             $('#targetWp').html(weaponLv)
-            // switch (weaponLv) {
-            //     case lv1:
-            //         // instructions exécutées lorsque le 
-            //         // résultat de l'expression correspond à valeur1 
-            //         $('#grid').find(`.cell-${weaponIx}`)
-            //             .addClass(`cell-weapon${cell-weaponlv1}`)
-            //         this.weapons.push(new weapon(weaponIx))
-            //         console.log('lv1', lv1)
-            //         break;
-
-            //     case lv2:
-            //         // instructions exécutées lorsque le 
-            //         // résultat de l'expression correspond à valeur2 
-            //         console.log('lv2')
-            //         break;
-
-            //     case lv3:
-            //         // instructions exécutées lorsque le 
-            //         // résultat de l'expression correspond à valeurN 
-            //         console.log('lv3')
-            //         break;
-
-            //     case lv4:
-            //         // instructions exécutées lorsque le 
-            //         // résultat de l'expression correspond à valeurN 
-            //         console.log('lv4')
-            //         break;
-
-            //     default:
-            //         // instructions exécutées quand aucun des
-            //         // les valeurs correspondent à la valeur de l'expression 
-            //         console.log('default')
-            //         break;
-            // }
         }
 
     }

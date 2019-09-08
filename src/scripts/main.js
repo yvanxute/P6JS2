@@ -3,7 +3,7 @@ const CONFIG = {
         COLUMNS: 15,
         ROWS: 10,
         OBSTACLES: 0.1,
-        PLAYERS_COUNT: 2,
+        PLAYERS_COUNT: 4,
         WEAPON_COUNT: 0.1
     }
 }
