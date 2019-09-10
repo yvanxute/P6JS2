@@ -99,7 +99,7 @@ class Grid {
             $('#grid').find(`.cell-${playerIx}`)
                 .addClass(`cell-player${ixHtml}`)
             console.log('playerName', curentNameHtml)
-            this.players.push(new player(playerIx, curentNameHtml, i))
+            this.players.push(new player(playerIx, curentNameHtml, i + 1))
         }
         console.log('tableau des joueurs: ', this.players)
         // exo = prevoir un 4 joueurs et faire un console.log du joueur ayant l'id 3 .find() soit .filter()
@@ -130,7 +130,7 @@ class Grid {
             // Pour chaque arme, trouver une case libre et la placer dessus
             $('#grid').find(`.cell-${weaponIx}`)
                 .addClass(`cell-weapon${wpHtml}`)
-            this.weapons.push(new weapon(weaponIx, wpCurentNameHtml, i))
+            this.weapons.push(new weapon(weaponIx, wpCurentNameHtml, i + 1))
 
         }
         console.log('tableau des armes: ', this.weapons)
