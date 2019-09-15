@@ -160,4 +160,10 @@ class Grid {
 
         return availableIx
     }
+
+    getPlayer(id) {
+        return this.players.find(function (element) {
+            return element.id == id
+        })
+    }
 }
