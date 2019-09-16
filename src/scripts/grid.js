@@ -102,10 +102,7 @@ class Grid {
             this.players.push(new player(playerIx, curentNameHtml, i + 1))
         }
         console.log('tableau des joueurs: ', this.players)
-        // exo = prevoir un 4 joueurs et faire un console.log du joueur ayant l'id 3 .find() soit .filter()
-        console.log('joueur:', this.players.find((n) => {
-            return n.id === 3;
-        }));
+
 
     }
 
@@ -133,17 +130,17 @@ class Grid {
             this.weapons.push(new weapon(weaponIx, wpCurentNameHtml, i + 1))
 
         }
-        console.log('tableau des armes: ', this.weapons)
 
-    }
+
+    };
 
     setPlayerNewPosition(oldPosition, newPosition) {
         // Supprimer la classe player à la position oldPosition
 
 
         // Ajouter la classe player à la position newPosition
-    }
-
+    };
+    // formule pour determiner les case de deplacement possible
     getNextFreeCells(position) {
         let availableIx = []
         for (var i = 0; i < 4; i++) {
@@ -159,11 +156,15 @@ class Grid {
         }
 
         return availableIx
-    }
-
+    };
+    //recuperation des objets players
     getPlayer(id) {
         return this.players.find(function (element) {
             return element.id == id
         })
-    }
+    };
+    displayPlayer() {
+        return this.player = $("player").value;
+
+    };
 }

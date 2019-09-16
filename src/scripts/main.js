@@ -49,7 +49,7 @@ $(() => {
                 .addClass('cell-move')
         });
     }
-
+    // observe ce qu'il ce passe sur mon clavier 
     const handleEvents = () => {
 
         $('#changePlayer').click(() => {
@@ -75,8 +75,8 @@ $(() => {
 
     console.log(currentPlayer);
 
-    console.log('available indexes : ', availableIx.join(' - '))
-    console.log('Wanted indexes : 22 - 23 - 24 - 26 - 27 - 28 - 10 - -5 - -20 - 40 - 55 - 70')
+
+
 
     // do {
     //     // Demander au joueur ce qu'il souhaite faire 
