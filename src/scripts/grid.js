@@ -85,7 +85,7 @@ class Grid {
 
 
         for (let i = 0; i < this.playersCount; i++) {
-            console.log('i', i) // to do ajouter un id unique a chaque joueur dans le tableau des joueurs pour le retrouver 
+            //  console.log('i', i) // to do ajouter un id unique a chaque joueur dans le tableau des joueurs pour le retrouver 
 
             // position aleatoire de player dans le grid          
             let playerIx = -1
@@ -101,7 +101,7 @@ class Grid {
             console.log('playerName', curentNameHtml)
             this.players.push(new player(playerIx, curentNameHtml, i + 1))
         }
-        console.log('tableau des joueurs: ', this.players)
+        //  console.log('tableau des joueurs: ', this.players)
 
 
     }
