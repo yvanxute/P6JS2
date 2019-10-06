@@ -144,19 +144,49 @@ class Grid {
     getNextFreeCells(position) {
         let availableIx = []
         for (var i = 0; i < 4; i++) {
+            let direction = 'V';
             const currentOffset =
                 // i est pair
                 ((i + 1) % 2) * Math.pow(-1, (i + 1) % 3) +
                 // i est impair
                 (i % 2) * Math.pow(-1, i % 3) * this.colCount
 
-            availableIx.push(position + currentOffset)
-            availableIx.push(position + currentOffset * 2)
-            availableIx.push(position + currentOffset * 3)
+
+            console.log(currentOffset);
+            if (currentOffset === -1 || currentOffset === 1) {
+                direction = 'H';
+            }
+            //on verifie a chaque mouvement si cela et possible ou pas 
+            if (this.verifObstacleOrLimit(position + currentOffset, position, direction)) {
+                availableIx.push(position + currentOffset);
+                if (this.verifObstacleOrLimit(position + currentOffset * 2, position, direction)) {
+                    availableIx.push(position + currentOffset * 2);
+                    if (this.verifObstacleOrLimit(position + currentOffset * 3, position, direction)) {
+                        availableIx.push(position + currentOffset * 3);
+                    }
+                }
+            }
+
         }
 
         return availableIx
     };
+
+    //Fonction qui va vérifier si cette position est sur un obstacle ou si elle a dépassé la limite
+    verifObstacleOrLimit(position, player, direction) {
+        let showPosition = true;
+
+        showPosition = this.obstacles.filter(o => o.position === position).length > 0 ? false : true;
+        //si la position et occupée il n'ai pas utile de faire la condition si ce n'ai pas le cas on examine alors les possibilité
+        if (direction === 'H' && showPosition) {
+            let playerRow = Math.floor(player / this.colCount) + 1;
+            let showRow = Math.floor(position / this.colCount) + 1;
+            showPosition = playerRow !== showRow ? false : true;
+        }
+
+        return showPosition;
+    }
+
     //recuperation des objets players
     getPlayer(id) {
         return this.players.find(function (element) {
