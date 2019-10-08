@@ -124,10 +124,14 @@ class Grid {
             } while (!this.isCellFree(weaponIx))
             let wpHtml = i + 1,
                 wpCurentNameHtml = weaponLv + wpHtml
-            // Pour chaque arme, trouver une case libre et la placer dessus
-            $('#grid').find(`.cell-${weaponIx}`)
-                .addClass(`cell-weapon${wpHtml}`)
+
+            // Pour chaque arme, trouver une case libre et la placer dans l'element ayant l'index un nouvel elem
+            let elementWeapon = document.createElement('p');
+            $(elementWeapon).addClass(`cell-weapon cell-weapon${wpHtml}`);
+            $('#grid').find(`.cell-${weaponIx}`).append(elementWeapon);
+
             this.weapons.push(new weapon(weaponIx, wpCurentNameHtml, i + 1))
+            console.log(this.weapons)
 
         }
 

@@ -47,6 +47,9 @@ $(() => {
         nextFreeCells.forEach(function (element) {
             $('#grid').find(`.cell-${element}`)
                 .addClass('cell-move')
+                .click(function () {
+                    console.log('test')
+                })
         });
     }
     // observe ce qu'il ce passe sur mon clavier 

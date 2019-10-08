@@ -24,25 +24,29 @@
     background-color: grey;
 }
 
-
+.cell-weapon {
+    width: 40px;
+    height: 40px;
+    margin: 0px;
+}
 
 .cell-weapon1 {
-    background: no-repeat center/80% url('../assets/lv1.png');
-    // background-color: black;
+    background: no-repeat center/100% url('../assets/lv1.png');
+
 }
 
 .cell-weapon2 {
-    background: no-repeat center/80% url('../assets/lv2.png');
+    background: no-repeat center/100% url('../assets/lv2.png');
     // background-color: maroon;
 }
 
 .cell-weapon3 {
-    background: no-repeat center/80% url('../assets/lv3.png');
+    background: no-repeat center/100% url('../assets/lv3.png');
     //background-color: yellow;
 }
 
 .cell-weapon4 {
-    background: no-repeat center/80% url('../assets/lv4.png');
+    background: no-repeat center/100% url('../assets/lv4.png');
     // background-color: green;
 
 }
