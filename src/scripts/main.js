@@ -21,6 +21,18 @@ $(() => {
     let availableIx = gridObj.getNextFreeCells()
     let currentPlayer = null
     let nextFreeCells = []
+    const card = new Card();
+
+    console.log("ready!");
+    //recupérer cadrPlayer
+    let html = "";
+    var cardPlayer = $('#cardPlayer');
+
+    gridObj.players.forEach(function (element) {
+        html = html + card.createElement(element);
+    });
+
+    cardPlayer.append(html);
 
     const changePlayer = () => {
         //supprimer l'etat precedent des possibilité de mouvement
@@ -74,12 +86,14 @@ $(() => {
     //Surveiller les evenements click et clavier pour le déroulement du jeu
     handleEvents()
 
+    $(document).ready(function () {
+
+    });
+
+
 
 
     console.log(currentPlayer);
-
-
-
 
     // do {
     //     // Demander au joueur ce qu'il souhaite faire 

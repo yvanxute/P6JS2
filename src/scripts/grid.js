@@ -3,6 +3,7 @@ class Grid {
     players = []
     weapons = []
 
+
     constructor(colCount, rowCount, obstaclePart, playersCount, weaponsCount) {
         this.colCount = colCount
         this.rowCount = rowCount
@@ -97,11 +98,10 @@ class Grid {
                 curentNameHtml = playerName + ixHtml
             // Pour chaque player, trouver une case libre et la placer dessus
             $('#grid').find(`.cell-${playerIx}`)
-                .addClass(`cell-player${ixHtml}`)
-            console.log('playerName', curentNameHtml)
-            this.players.push(new player(playerIx, curentNameHtml, i + 1))
+                .addClass(`cell-player${ixHtml}`);
+            // console.log('playerName', curentNameHtml);
+            this.players.push(new player(playerIx, curentNameHtml, i + 1));
         }
-        //  console.log('tableau des joueurs: ', this.players)
 
 
     }
@@ -131,7 +131,7 @@ class Grid {
             $('#grid').find(`.cell-${weaponIx}`).append(elementWeapon);
 
             this.weapons.push(new weapon(weaponIx, wpCurentNameHtml, i + 1))
-            console.log(this.weapons)
+
 
         }
 
@@ -156,7 +156,7 @@ class Grid {
                 (i % 2) * Math.pow(-1, i % 3) * this.colCount
 
 
-            console.log(currentOffset);
+
             if (currentOffset === -1 || currentOffset === 1) {
                 direction = 'H';
             }
