@@ -57,7 +57,8 @@ $(() => {
         //determiner les possibilités de mouvement du currentPlayer
         nextFreeCells = gridObj.getNextFreeCells(currentPlayer.position);
         // determiner s'il y a une arme
-        let elementWeapon = document.getElementsByClassName('cell-weapon');
+        let elementWeapon = $('#weapon');
+        // document.getElementsByClassName('cell-weapon');
 
 
         console.log(elementWeapon)
@@ -76,8 +77,6 @@ $(() => {
                     // } else {
 
                     // }
-
-
 
                     console.log('test')
                 })

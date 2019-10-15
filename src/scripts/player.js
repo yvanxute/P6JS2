@@ -11,3 +11,7 @@ class player {
         this.position = position;
     }
 }
+// crée une fonction pour le deplacement de chaque joueur 
+// tous en respectent les movement autoriser 
+
+//crée la fonction d'echange d'arme recuperer les armes qui son dans le champs de mouvement 
