@@ -87,7 +87,6 @@ class Grid {
 
         for (let i = 0; i < this.playersCount; i++) {
             //  console.log('i', i) // to do ajouter un id unique a chaque joueur dans le tableau des joueurs pour le retrouver 
-
             // position aleatoire de player dans le grid          
             let playerIx = -1
             do {
@@ -179,7 +178,6 @@ class Grid {
     //Fonction qui va vérifier si cette position est sur un obstacle ou si elle a dépassé la limite
     verifObstacleOrLimit(position, player, direction) {
         let showPosition = true;
-
         showPosition = this.obstacles.filter(o => o.position === position).length > 0 ? false : true;
         //si la position et occupée il n'ai pas utile de faire la condition si ce n'ai pas le cas on examine alors les possibilité
         if (direction === 'H' && showPosition) {
@@ -201,4 +199,16 @@ class Grid {
         return this.player = $("player").value;
 
     };
+    //recuperation des objets weapons
+    getWeapon(id) {
+        return this.weapons.find(function (element) {
+            return element.id == id
+
+        })
+
+    };
+    displayWeapon() {
+        return this.weapon = $("weapon").value;
+    };
+
 }
