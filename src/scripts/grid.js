@@ -131,7 +131,7 @@ class Grid {
 
             this.weapons.push(new weapon(weaponIx, wpCurentNameHtml, i + 1))
 
-
+            console.log(weaponIx)
         }
 
 
@@ -200,15 +200,15 @@ class Grid {
 
     };
     //recuperation des objets weapons
-    getWeapon(id) {
+    getWeapon(position) {
         return this.weapons.find(function (element) {
-            return element.id == id
+            return element.position == position
 
         })
 
     };
     displayWeapon() {
-        return this.weapon = $("weapon").value;
+        return this.weapons = $("weapon").value;
     };
 
 }
