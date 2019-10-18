@@ -30,7 +30,8 @@ $(() => {
     var cardPlayer = $('#cardPlayer');
 
     gridObj.players.forEach(function (element) {
-        html = html + card.createElement(element);
+        let currentCardPlayer = card.createElement(element);
+        cardPlayer.append(currentCardPlayer)
     });
 
     cardPlayer.append(html);
@@ -66,7 +67,8 @@ $(() => {
         nextFreeCells.forEach(function (element) {
             $('#grid').find(`.cell-${element}`)
                 .addClass('cell-move')
-                .click(function () {
+                .click(function (event) {
+                    console.log(event)
                     // obsevartion du click sur les mouvements possible joueur ou armes
                     // Si la cellule est autorisée au déplacement et que les joueurs ne sont pas en contact (pas de combat)
 
