@@ -67,22 +67,16 @@ $(() => {
             $('#grid').find(`.cell-${element}`)
                 .addClass('cell-move')
                 .click(function (event) {
-                    console.log(event)
+                    console.log($(event.target).attr('class'))
                     // obsevartion du click sur les mouvements possible joueur ou armes
                     // Si la cellule est autorisée au déplacement et que les joueurs ne sont pas en contact (pas de combat)
-
-
-                    if (elementWeapon) {
-                        return elementWeapon = console.log('arme')
-
+                    let type = $(event.target).attr('class');
+                    if (type.search('weapon') !== -1) {
+                        return elementWeapon = console.log('arme N°' + type.slice(-1));
                     }
-                    if (elementPlayer) {
-                        return elementPlayer = console.log('player')
-                    } else {
-
+                    if (type.search('player') !== -1) {
+                        return elementPlayer = console.log('player' + type.slice(-1));
                     }
-
-                    console.log('test')
                 })
         });
     }
