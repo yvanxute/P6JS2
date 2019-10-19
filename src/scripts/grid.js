@@ -97,7 +97,7 @@ class Grid {
                 curentNameHtml = playerName + ixHtml
             // Pour chaque player, trouver une case libre et la placer dessus
             $('#grid').find(`.cell-${playerIx}`)
-                .addClass(`cell-player${ixHtml}`);
+                .addClass(`cell-player cell-player${ixHtml}`);
             // console.log('playerName', curentNameHtml);
             this.players.push(new player(playerIx, curentNameHtml, i + 1));
         }

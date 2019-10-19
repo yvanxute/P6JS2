@@ -33,8 +33,6 @@ $(() => {
         let currentCardPlayer = card.createElement(element);
         cardPlayer.append(currentCardPlayer)
     });
-
-    cardPlayer.append(html);
     // creation de fonction pour changer l'utilisateur 
     const changePlayer = () => {
         //supprimer l'etat precedent des possibilité de mouvement
@@ -58,11 +56,12 @@ $(() => {
         //determiner les possibilités de mouvement du currentPlayer
         nextFreeCells = gridObj.getNextFreeCells(currentPlayer.position);
         // determiner s'il y a une arme
-        let elementWeapon = $('#weapon');
-        // document.getElementsByClassName('cell-weapon');
+        let elementWeapon = document.getElementsByClassName('cell-weapon');
+        let elementPlayer = document.getElementsByClassName('cell-player');
 
 
         console.log(elementWeapon)
+        console.log(elementPlayer)
         //griser les cases des mouvements possible
         nextFreeCells.forEach(function (element) {
             $('#grid').find(`.cell-${element}`)
@@ -73,12 +72,15 @@ $(() => {
                     // Si la cellule est autorisée au déplacement et que les joueurs ne sont pas en contact (pas de combat)
 
 
-                    // if (elementWeapon && currentPlayer) {
-                    //     elementWeapon = gridObj.weapon()
-                    //     console.log(getWeapon)
-                    // } else {
+                    if (elementWeapon) {
+                        return elementWeapon = console.log('arme')
 
-                    // }
+                    }
+                    if (elementPlayer) {
+                        return elementPlayer = console.log('player')
+                    } else {
+
+                    }
 
                     console.log('test')
                 })
