@@ -8,18 +8,16 @@ class Card {
 
         let htmlInfo = ` ${player.name} `;
         let htmlEl2 = document.createElement("span");
-
         let htmlSante = `santé ${player.health} `;
         let htmlPw = `puissance arme ${player.weapon} `;
-        htmlEl2 = htmlSante + htmlPw;
+        $(htmlEl2).html(` ${htmlInfo} ${htmlSante} `)
 
 
-        console.log(htmlSante + player.id)
+        console.log('htmlel2', htmlEl2)
 
 
 
 
-        $(htmlEl).html(htmlInfo + htmlEl2)
         return htmlEl;
     }
 

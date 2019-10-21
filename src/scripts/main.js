@@ -67,7 +67,7 @@ $(() => {
             $('#grid').find(`.cell-${element}`)
                 .addClass('cell-move')
                 .click(function (event) {
-                    console.log($(event.target).attr('class'))
+                    console.log($(event.target).attr('id'))
                     // obsevartion du click sur les mouvements possible joueur ou armes
                     // Si la cellule est autorisée au déplacement et que les joueurs ne sont pas en contact (pas de combat)
                     let type = $(event.target).attr('class');

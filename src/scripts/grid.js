@@ -33,6 +33,7 @@ class Grid {
                 const cellIx = i * this.colCount + j
                 const td = document.createElement('td')
                 $(td).addClass(`cell cell-${cellIx}`)
+                td.id = cellIx;
                 tr.append(td)
             }
             grid.append(tr)
