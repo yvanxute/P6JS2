@@ -14,9 +14,9 @@ class Card {
 
 
         function htmlPlayer(data) {
-            return `<li> ${data.nom}</li>
+            return `<li id='i'> ${data.nom}</li>
              <span> santé ${data.health}</span>
-             </br> <span> puissance arme ${data.weapon}</span > `;
+             </br> <span id='pw'> puissance arme ${data.weapon}</span > `;
         }
         document.querySelector('.js-cardPlayer').innerHTML += htmlPlayer(playerS);
     }
