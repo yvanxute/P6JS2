@@ -3,22 +3,22 @@ class Card {
     constructor() {}
 
     createElement(player) {
-        let htmlEl = document.createElement("div");
-        htmlEl.id = `cardPlayer-${player.id}`;
 
-        let htmlInfo = ` ${player.name} `;
-        let htmlEl2 = document.createElement("span");
-        let htmlSante = `santé ${player.health} `;
-        let htmlPw = `puissance arme ${player.weapon} `;
-        $(htmlEl2).html(` ${htmlInfo} ${htmlSante} `)
-
-
-        console.log('htmlel2', htmlEl2)
+        let playerS = {
+            nom: ` ${player.name} `,
+            health: `${player.health} `,
+            weapon: `${player.weapon} `
+        };
+        htmlPlayer.id = `cardPlayer-${player.id}`;
+        console.log('info player', htmlPlayer.id);
 
 
-
-
-        return htmlEl;
+        function htmlPlayer(data) {
+            return `<li> ${data.nom}</li>
+             <span> santé ${data.health}</span>
+             </br> <span> puissance arme ${data.weapon}</span > `;
+        }
+        document.querySelector('.js-cardPlayer').innerHTML += htmlPlayer(playerS);
     }
 
 }
