@@ -25,6 +25,7 @@ $(() => {
     let card = new Card();
 
 
+
     //recupérer cardPlayer
     let html = "";
     var cardPlayer = $('#cardPlayer');
@@ -58,8 +59,7 @@ $(() => {
         // determiner s'il y a une arme
         let elementWeapon = document.getElementsByClassName('cell-weapon');
         let elementPlayer = document.getElementsByClassName('cell-player');
-
-
+        let element = 
         console.log(elementWeapon)
         console.log(elementPlayer)
         //griser les cases des mouvements possible
@@ -67,17 +67,22 @@ $(() => {
             $('#grid').find(`.cell-${element}`)
                 .addClass('cell-move')
                 .click(function (event) {
-                    console.log($(event.target).attr('id'))
-                    // obsevartion du click sur les mouvements possible joueur ou armes
-                    // Si la cellule est autorisée au déplacement et que les joueurs ne sont pas en contact (pas de combat)
-                    let type = $(event.target).attr('class');
-                    if (type.search('weapon') !== -1) {
-                        return elementWeapon = console.log('arme N°' + type.slice(-1));
+                        console.log($(event.target).attr('id'))
+                        // obsevartion du click sur les mouvements possible joueur ou armes
+                        // Si la cellule est autorisée au déplacement et que les joueurs ne sont pas en contact (pas de combat)
+                        let type = $(event.target).attr('class');
+                        if (type.search('weapon') !== -1) {
+                            return elementWeapon = console.log('arme N°' + type.slice(-1));
+                        }
+                        if (type.search('player') !== -1) {
+                            return elementPlayer = console.log('player ' + type.slice(-1));
+                        }
+
+
                     }
-                    if (type.search('player') !== -1) {
-                        return elementPlayer = console.log('player' + type.slice(-1));
-                    }
-                })
+
+
+                )
         });
     }
     // observe ce qu'il ce passe sur mon clavier 

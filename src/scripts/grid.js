@@ -99,8 +99,9 @@ class Grid {
             // Pour chaque player, trouver une case libre et la placer dessus
             $('#grid').find(`.cell-${playerIx}`)
                 .addClass(`cell-player cell-player${ixHtml}`);
-            // console.log('playerName', curentNameHtml);
+
             this.players.push(new player(playerIx, curentNameHtml, i + 1));
+            console.log("index player", playerIx);
         }
 
 
@@ -126,13 +127,18 @@ class Grid {
                 wpCurentNameHtml = weaponLv + wpHtml
 
             // Pour chaque arme, trouver une case libre et la placer dans l'element ayant l'index un nouvel elem
+
             let elementWeapon = document.createElement('p');
+
             $(elementWeapon).addClass(`cell-weapon cell-weapon${wpHtml}`);
-            $('#grid').find(`.cell-${weaponIx}`).append(elementWeapon);
+            elementWeapon.id = weaponIx;
+
+            $('#grid').find(`.cell-${weaponIx}`)
+                .append(elementWeapon);
 
             this.weapons.push(new weapon(weaponIx, wpCurentNameHtml, i + 1))
 
-            console.log(weaponIx)
+            console.log("index armes", weaponIx);
         }
 
 
@@ -201,15 +207,15 @@ class Grid {
 
     };
     //recuperation des objets weapons
-    getWeapon(position) {
+    getWeapon(id) {
         return this.weapons.find(function (element) {
-            return element.position == position
+            return element.id == id
 
         })
 
     };
     displayWeapon() {
-        return this.weapons = $("weapon").value;
+        return this.weapon = $("weapon").value;
     };
 
 }
