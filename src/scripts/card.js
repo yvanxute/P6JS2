@@ -16,7 +16,7 @@ class Card {
         function htmlPlayer(data) {
             return `<div id='${data.nom}'>
             <li> ${data.nom}</li>
-             <span i='health'> santé ${data.health}</span>
+             <span id='health'> santé ${data.health}</span>
              </br>
              <span id='pw'> puissance arme ${data.weapon}</span ></div> `;
         }
