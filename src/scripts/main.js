@@ -59,9 +59,12 @@ $(() => {
         // determiner s'il y a une arme
         let elementWeapon = document.getElementsByClassName('cell-weapon');
         let elementPlayer = document.getElementsByClassName('cell-player');
-        let element = 
-        console.log(elementWeapon)
-        console.log(elementPlayer)
+        let element1 = document.getElementById(player.position);
+        let element2 = document.getElementById(weapon.position);
+        console.log(element2);
+        console.log(element1);
+        console.log(elementWeapon);
+        console.log(elementPlayer);
         //griser les cases des mouvements possible
         nextFreeCells.forEach(function (element) {
             $('#grid').find(`.cell-${element}`)
@@ -70,12 +73,13 @@ $(() => {
                         console.log($(event.target).attr('id'))
                         // obsevartion du click sur les mouvements possible joueur ou armes
                         // Si la cellule est autorisée au déplacement et que les joueurs ne sont pas en contact (pas de combat)
-                        let type = $(event.target).attr('class');
+                        // let type = $(event.target).attr('class');
+                        let type = $(event.target).attr('id');
                         if (type.search('weapon') !== -1) {
-                            return elementWeapon = console.log('arme N°' + type.slice(-1));
+                            return element2 = console.log('arme N°'.includes(element2));
                         }
                         if (type.search('player') !== -1) {
-                            return elementPlayer = console.log('player ' + type.slice(-1));
+                            return element1 = console.log('player ' + type.slice(-1));
                         }
 
 
