@@ -92,8 +92,10 @@ class Grid {
             let playerIx = -1
             do {
                 playerIx = Math.round(Math.random() * (maxIx))
+                // to do lever une excetion si un joueur sur trouve a coter de l'index d'insertion
 
             } while (!this.isCellFree(playerIx))
+            // ajouter condition que les cases a coter n'y a pas de joueur ni haut ni bas ni droite ni gauche 
             let ixHtml = i + 1,
                 curentNameHtml = playerName + ixHtml
             // Pour chaque player, trouver une case libre et la placer dessus
@@ -199,6 +201,7 @@ class Grid {
     //recuperation des objets players
     getPlayer(id) {
         return this.players.find(function (element) {
+            console.log('get player', getPlayer);
             return element.id == id
         })
     };
@@ -217,5 +220,73 @@ class Grid {
     displayWeapon() {
         return this.weapon = $("weapon").value;
     };
+
+    // creation de fonction pour changer l'utilisateur 
+
+    changePlayer = () => {
+        let currentPlayer = null
+        let nextFreeCells = [];
+        availableIx = getNextFreeCells();
+        //supprimer l'etat precedent des possibilité de mouvement
+        if (nextFreeCells.length > 0) {
+            nextFreeCells = getNextFreeCells(currentPlayer.position);
+            //griser les cases des mouvements possible
+            nextFreeCells.forEach(function (element) {
+                $('#grid').find(`.cell-${element}`)
+                    .removeClass('cell-move')
+            });
+        }
+
+        //modifier le currentPlayer
+        //recupérer le joueur 1 en debut de partie si le currentPlayer n'existe pas (c'est le premier tour et c'est le tour du joueur 1)
+
+        if (currentPlayer && currentPlayer.id === 1) {
+            currentPlayer = getPlayer(2);
+        } else {
+            currentPlayer = getPlayer(1);
+        }
+        //determiner les possibilités de mouvement du currentPlayer
+        nextFreeCells = getNextFreeCells(currentPlayer.position);
+        // determiner s'il y a une arme
+        // let elementWeapon = document.getElementsByClassName('cell-weapon');
+        // let elementPlayer = document.getElementsByClassName('cell-player');
+        let element1 = document.getElementById(currentPlayer);
+        let element2 = document.getElementById(weapon.position);
+        console.log('element2', element2);
+        console.log('element1', element1);
+        console.log('elementWeapon', elementWeapon);
+        console.log('elementPlayer', elementPlayer);
+        //griser les cases des mouvements possible
+        nextFreeCells.forEach(function (element) {
+            $('#grid').find(`.cell-${element}`)
+                .addClass('cell-move')
+                .click(function (event) {
+                    console.log($(event.target).attr('id'))
+                    // obsevartion du click sur les mouvements possible joueur ou armes
+                    // Si la cellule est autorisée au déplacement et que les joueurs ne sont pas en contact (pas de combat)
+                    // let type = $(event.target).attr('class');
+                    let type = $(event.target).attr('id');
+                    if (type.search('weapon') !== -1) {
+                        return element2 = console.log('arme N°' + includes(element2));
+                    }
+                    if (type.search('player') !== -1) {
+                        return element1 = console.log(currentPlayer.includes());
+                    }
+                })
+        });
+    }
+
+    handleEvents = () => {
+
+        $('#changePlayer').click(() => {
+            console.log("CHANGE PLAYER")
+            changePlayer()
+        });
+
+    }
+    //Récupérer tous les evenements clavier sur l'écran
+    //   $(window).keyup(function (event) {
+    //       console.log(event.which)
+    // };
 
 }

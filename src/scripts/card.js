@@ -1,26 +1,32 @@
 class Card {
+    players = []
 
-    constructor() {}
+    constructor() {
+        // creation du template type reutilisable
+        this.generatHtml()
+        //insertion de l'information player dans html
+        this.createElement()
+    }
+
+    generatHtml() {
+        
+        function htmlPlayer(player) {
+            return `<div id='${player.name}'>
+            <ul> ${player.name}
+           <p></P>
+            <span id='health'> santé ${player.health}</span>
+           <p></P>
+            <span id='pw'> puissance arme ${player.weapon}</span>
+            </ul>
+            </div> `;
+        }
+    }
+
 
     createElement(player) {
-
-        let playerS = {
-            nom: ` ${player.name} `,
-            health: `${player.health} `,
-            weapon: `${player.weapon} `
-        };
         htmlPlayer.id = `cardPlayer-${player.id}`;
         console.log('info player', htmlPlayer.id);
 
-
-        function htmlPlayer(data) {
-            return `<div id='${data.nom}'>
-            <li> ${data.nom}</li>
-             <span id='health'> santé ${data.health}</span>
-             </br>
-             <span id='pw'> puissance arme ${data.weapon}</span ></div> `;
-        }
-        document.querySelector('.js-cardPlayer').innerHTML += htmlPlayer(playerS);
+        document.querySelector('.js-cardPlayer').innerHTML += htmlPlayer(player);
     }
-
 }

@@ -18,10 +18,10 @@ $(() => {
         CONFIG.GRID.WEAPON_COUNT
     )
 
-    let availableIx = gridObj.getNextFreeCells()
-    let currentPlayer = null
+    
+    
     let elementWeapon = null
-    let nextFreeCells = []
+    
     let card = new Card();
 
 
@@ -34,88 +34,26 @@ $(() => {
         let currentCardPlayer = card.createElement(element);
         cardPlayer.append(currentCardPlayer)
     });
-    // creation de fonction pour changer l'utilisateur 
-    const changePlayer = () => {
-        //supprimer l'etat precedent des possibilité de mouvement
-        if (nextFreeCells.length > 0) {
-            nextFreeCells = gridObj.getNextFreeCells(currentPlayer.position);
-            //griser les cases des mouvements possible
-            nextFreeCells.forEach(function (element) {
-                $('#grid').find(`.cell-${element}`)
-                    .removeClass('cell-move')
-            });
-        }
-
-        //modifier le currentPlayer
-        //recupérer le joueur 1 en debut de partie si le currentPlayer n'existe pas (c'est le premier tour et c'est le tour du joueur 1)
-
-        if (currentPlayer && currentPlayer.id === 1) {
-            currentPlayer = gridObj.getPlayer(2);
-        } else {
-            currentPlayer = gridObj.getPlayer(1);
-        }
-        //determiner les possibilités de mouvement du currentPlayer
-        nextFreeCells = gridObj.getNextFreeCells(currentPlayer.position);
-        // determiner s'il y a une arme
-        let elementWeapon = document.getElementsByClassName('cell-weapon');
-        let elementPlayer = document.getElementsByClassName('cell-player');
-        let element1 = document.getElementById(player.position);
-        let element2 = document.getElementById(weapon.position);
-        console.log(element2);
-        console.log(element1);
-        console.log(elementWeapon);
-        console.log(elementPlayer);
-        //griser les cases des mouvements possible
-        nextFreeCells.forEach(function (element) {
-            $('#grid').find(`.cell-${element}`)
-                .addClass('cell-move')
-                .click(function (event) {
-                        console.log($(event.target).attr('id'))
-                        // obsevartion du click sur les mouvements possible joueur ou armes
-                        // Si la cellule est autorisée au déplacement et que les joueurs ne sont pas en contact (pas de combat)
-                        // let type = $(event.target).attr('class');
-                        let type = $(event.target).attr('id');
-                        if (type.search('weapon') !== -1) {
-                            return element2 = console.log('arme N°'.includes(element2));
-                        }
-                        if (type.search('player') !== -1) {
-                            return element1 = console.log('player ' + type.slice(-1));
-                        }
-
-
-                    }
-
-
-                )
-        });
-    }
+   
     // observe ce qu'il ce passe sur mon clavier 
-    const handleEvents = () => {
+   
 
-        $('#changePlayer').click(() => {
-            console.log("CHANGE PLAYER")
-            changePlayer()
-        });
+  
 
-        //Récupérer tous les evenements clavier sur l'écran
-        $(window).keyup(function (event) {
-            console.log(event.which)
-        });
+    //Switch sur event.which
 
-        //Switch sur event.which
-
-    };
+});
 
     //Debut de partie
-    changePlayer()
+
     //Surveiller les evenements click et clavier pour le déroulement du jeu
-    handleEvents()
 
 
 
 
 
-    console.log(currentPlayer);
+
+
 
     // do {
     //     // Demander au joueur ce qu'il souhaite faire 
@@ -136,4 +74,3 @@ $(() => {
     //     // Se défendre s'il le demande
 
     // } while (gridObj.players.filter(p => p.health <= 0).length === 0)
-})
